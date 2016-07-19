@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  birthday: 2016-07-14
+  social_security: 1
+  status: 1
+  hierarchy: 1
+
+two:
+  name: MyString
+  birthday: 2016-07-14
+  social_security: 1
+  status: 1
+  hierarchy: 1

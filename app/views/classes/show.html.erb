@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @class.group %>
+</p>
+
+<p>
+  <strong>Member:</strong>
+  <%= @class.member %>
+</p>
+
+<%= link_to 'Edit', edit_class_path(@class) %> |
+<%= link_to 'Back', classes_path %>

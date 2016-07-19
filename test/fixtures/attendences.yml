@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calendar_id: 
+  classe_id: 
+  member_id: 
+  checkin: 1
+
+two:
+  calendar_id: 
+  classe_id: 
+  member_id: 
+  checkin: 1

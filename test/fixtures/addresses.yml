@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  zip_code: 1
+  name_street: MyString
+  number_street: 1
+  complement: MyString
+  member_id: 
+
+two:
+  zip_code: 1
+  name_street: MyString
+  number_street: 1
+  complement: MyString
+  member_id: 

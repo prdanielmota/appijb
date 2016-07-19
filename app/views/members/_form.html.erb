@@ -1,0 +1,77 @@
+<%= form_for(@member) do |f| %>
+  <% if @member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+      <% @member.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.date_select :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :social_security %><br>
+    <%= f.number_field :social_security %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select(:status, options_for_select([["Ativo", "1"], ["Inativo", "0"]], @member.status), {include_blank: true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :hierarchy %><br>
+    <%= f.select(:hierarchy, options_for_select([["Amigo", "1"], ["Membro", "1"], ["Lider", "2"], ["Ancião", "3"], ["Pastor", "4"]], @member.hierarchy), {include_blank: true}) %>
+  </div>
+
+  <%= f.fields_for :address do |ff| %>
+    <div class="field">
+      <%= ff.label :zip_code %><br>
+      <%= ff.text_field :zip_code %>
+    </div>
+
+    <div class="field">
+      <%= ff.label :name_street %><br>
+      <%= ff.text_field :name_street %>
+    </div>
+
+    <div class="field">
+      <%= ff.label :number_street %><br>
+      <%= ff.text_field :number_street %>
+    </div>
+
+    <div class="field">
+      <%= ff.label :complement %><br>
+      <%= ff.text_field :complement %>
+    </div>
+  <% end %>
+
+  <%= f.fields_for :contact do |fc| %>
+   
+    <% if fc.object.new_record? %>
+
+      <div class="field">
+        <%= fc.label :type %><br>
+        <%= fc.select("type", options_for_select([["E-mail", "1"], ["Celular", "2"]]), {include_blank: true}) %>
+      </div>
+      <div class="field">
+        <%= fc.label :description %><br>
+        <%= fc.text_field :description %>
+      </div>    
+
+    <% end %>
+
+  <% end %>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
